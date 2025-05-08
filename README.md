@@ -301,7 +301,7 @@ To ensure consistent results across experimental setups:
 ## Repository Structure
 
 - `start_blender.py` - Environment integration script for external library access
-- `improved_gaussian_blender_script.py` - Primary multi-view generation implementation
+- `gaussian_blender_script.py` - Primary multi-view generation implementation
 - `requirements.txt` - Dependency specification for virtual environment
 - `README.md` - Technical documentation
 
