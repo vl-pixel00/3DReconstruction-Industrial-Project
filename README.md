@@ -42,8 +42,10 @@ C:\Program Files\Blender Foundation\Blender 4.0\4.0\python\bin\python.exe
 
 Run the following in a terminal:
 
-'''bash
+'''
+bash
 "<path-to-blender-python>" -m ensurepip
 "<path-to-blender-python>" -m pip install --upgrade pip setuptools wheel
+'''
 
 Replace <path-to-blender-python> with the appropriate path from Step 1.
