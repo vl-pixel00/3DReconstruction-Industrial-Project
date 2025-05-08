@@ -40,11 +40,19 @@ C:\Program Files\Blender Foundation\Blender 4.0\4.0\python\bin\python.exe
 
 ### 2. Enable pip
 
+Run the following in a terminal:
+
 ```bash
 "<path-to-blender-python>" -m ensurepip
-"<path-to-blender-python>" -m pip install --upgrade pip setuptools wheel
+ "<path-to-blender-python>" -m pip install --upgrade pip setuptools wheel
+Replace <path-to-blender-python> with the appropriate path from Step 1.
 
-### 3. Install Python Dependencies
+---
 
-Install the required libraries into Blender’s Python environment:
+Make sure:
+- The `bash` block has **exactly three backticks** to open and close
+- You don't nest explanatory text *inside* the code block
 
+This fix will prevent GitHub from treating the rest of the document as part of the command block.
+
+Would you like me to lint and finalise your entire `README.md` one more time to guarantee formatting safety across all platforms?
