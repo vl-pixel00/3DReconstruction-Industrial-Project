@@ -1,44 +1,50 @@
-# masterclass_img-to-3D_assignment
+# Masterclass Img-to-3D 
 
-# Blender Python Script — Setup Guide
+## Blender Setup
 
-This repository contains a Python script designed to run inside **Blender’s Scripting tab**, using Blender’s internal Python environment. It requires three external Python libraries: `numpy`, `pillow`, and `torch`.
-
-The instructions below will help you set everything up — even if you're new to Python or Blender scripting.
+This repository contains a Python script developed for academic coursework. It is designed to run inside Blender's **Scripting workspace**, using Blender’s internal Python environment (Python 3.11.9). The script uses `numpy`, `pillow`, and `torch`, and supports hardware acceleration via **Apple’s Metal (MPS)** or **NVIDIA CUDA** on compatible systems.
 
 ---
 
-## Requirements
-
-- Blender 4.0 or newer
-- Internet connection (for installing packages)
-- macOS, Windows, or Linux
-- A terminal or command prompt
+## Project Details
+ 
+- **Environment:** Blender 4.0+, Python 3.11.9  
+- **Platform:** macOS (primary), compatible with Windows and Linux  
+- **Execution Mode:** GUI-only (not headless)  
+- **Dependencies:** Installed into Blender's internal Python  
+- **Hardware Acceleration:** Supports MPS (macOS) and CUDA (Linux/Windows)
 
 ---
 
-## Step 1 — Locate Blender’s Internal Python
+## Quick Setup Guide
 
-Blender includes its own isolated version of Python. This is the interpreter you must use to install packages.
+Follow these steps to replicate the development environment and run the script inside Blender.
 
-### Windows (default):
+---
 
-C:\Program Files\Blender Foundation\Blender 4.0\4.0\python\bin\python.exe
+### 1. Locate Blender’s Internal Python
 
-### macOS (default):
+#### macOS:
 
 /Applications/Blender.app/Contents/Resources/4.0/python/bin/python3.11
 
-### Linux (example):
+#### Windows:
+
+C:\Program Files\Blender Foundation\Blender 4.0\4.0\python\bin\python.exe
+
+#### Linux:
+
+/usr/share/blender/4.0/python/bin/python3.11
 
 ---
 
-## Step 2 — Enable pip in Blender’s Python
-
-Blender’s Python usually doesn’t have `pip` enabled by default. This step only needs to be done once.
+### 2. Enable pip
 
 ```bash
 "<path-to-blender-python>" -m ensurepip
 "<path-to-blender-python>" -m pip install --upgrade pip setuptools wheel
 
-Replace <path-to-blender-python> with the correct path from Step 1.
+### 3. Install Python Dependencies
+
+Install the required libraries into Blender’s Python environment:
+
