@@ -314,3 +314,4 @@ MIT License
 
 - [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
 - [Blender Python API Documentation](https://docs.blender.org/api/current/index.html)
+- [Objaverse-XL Rendering Source](https://github.com/allenai/objaverse-xl/tree/main/scripts/rendering)
