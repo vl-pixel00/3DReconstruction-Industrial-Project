@@ -1,4 +1,4 @@
-# Gaussian Splat Image Generation Tool
+# Image Generation Tool Optimised for Gaussian Splatting
 
 A Blender-based framework for generating optimised multi-view datasets and camera matrices for 3D Gaussian Splatting reconstruction.
 
@@ -33,8 +33,8 @@ This approach leverages Blender's built-in Python environment without external d
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/gaussian-splat-generator.git
-cd gaussian-splat-generator
+git clone https://github.com/vl-pixel00/blender-view-gen.git
+cd blender-view-gen
 ```
 
 2. Execute the script via Blender's command-line interface:
@@ -284,7 +284,7 @@ bpy.context.scene.use_nodes = False
 ┌─────────────────┐     ┌──────┘                 ┌──────────────────┐
 │ Results         │<────┤                        │ Automated        │
 │ Analysis        │     │                        │ Rendering        │
-└─────────────────┘     └────────────────────────┘
+└─────────────────┘     └────────────────────────└──────────────────┘
 ```
 
 ## Experimental Reproducibility
@@ -305,14 +305,6 @@ To ensure consistent results across experimental setups:
 - `gaussian_blender_script.py` – Main script for rendering multi-view images and exporting camera matrices
 - `requirements.txt` – Python dependency list for setting up the virtual environment
 - `README.md` – Project setup, usage instructions, and technical documentation
-
-## Dependencies
-
-```
-numpy==1.26.4
-pillow==10.2.0
-torch==2.2.0
-```
 
 ## License
 

@@ -3,4 +3,4 @@ numpy==1.26.4
 pillow==10.2.0
 torch==2.2.0
 # USD-related dependencies for 3D file format support
-usd-core==22.11
+# usd-core==22.11
