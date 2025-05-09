@@ -2,7 +2,7 @@
 
 A Blender-based framework for generating optimised multi-view datasets and camera matrices for 3D Gaussian Splatting reconstruction.
 
-![Gaussian Splat Example](https://repository-images.githubusercontent.com/667382847/b8c90618-15d6-4231-bd22-f5c8584de616)
+[Gaussian Splat Example](models/examples/guitar_056_GS.ply)
 
 ## Project Overview
 
