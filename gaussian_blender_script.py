@@ -14,7 +14,6 @@ IMPORT_FUNCTIONS: Dict[str, Callable] = {
     "obj": bpy.ops.import_scene.obj,
     "glb": bpy.ops.import_scene.gltf,
     "gltf": bpy.ops.import_scene.gltf,
-    "usd": bpy.ops.import_scene.usd,
     "fbx": bpy.ops.import_scene.fbx,
     "stl": bpy.ops.import_mesh.stl,
     "usda": bpy.ops.import_scene.usda,
@@ -151,40 +150,26 @@ def load_object(object_path: str) -> bool:
         log(f"Error: Unsupported file type: {object_path}")
         return False
 
-    try:
-        if file_extension == "usdz":
-            dirname = os.path.dirname(os.path.realpath(__file__))
-            usdz_package = os.path.join(dirname, "io_scene_usdz.zip")
-            bpy.ops.preferences.addon_install(filepath=usdz_package)
-            addon_name = "io_scene_usdz"
-            bpy.ops.preferences.addon_enable(module=addon_name)
-            from io_scene_usdz.import_usdz import import_usdz
-            import_usdz(bpy.context, filepath=object_path, materials=True, animations=True)
-            return True
-
-        # Load from existing import functions
-        if file_extension in IMPORT_FUNCTIONS:
-            import_function = IMPORT_FUNCTIONS[file_extension]
-            
-            if file_extension == "blend":
-                import_function(directory=object_path, link=False)
-            elif file_extension in {"glb", "gltf"}:
-                import_function(filepath=object_path, merge_vertices=True)
-            else:
-                import_function(filepath=object_path)
-                
-            # Check if any objects were loaded
-            meshes = list(get_scene_meshes())
-            if not meshes:
-                log("Warning: No mesh objects were imported")
-                
-            log(f"Successfully loaded object with {len(meshes)} meshes")
-            return True
+    # Load from existing import functions
+    if file_extension in IMPORT_FUNCTIONS:
+        import_function = IMPORT_FUNCTIONS[file_extension]
+        
+        if file_extension == "blend":
+            import_function(directory=object_path, link=False)
+        elif file_extension in {"glb", "gltf"}:
+            import_function(filepath=object_path, merge_vertices=True)
         else:
-            log(f"Error: Unsupported file extension: {file_extension}")
-            return False
-    except Exception as e:
-        log(f"Error loading object: {str(e)}")
+            import_function(filepath=object_path)
+            
+        # Check if any objects were loaded
+        meshes = list(get_scene_meshes())
+        if not meshes:
+            log("Warning: No mesh objects were imported")
+            
+        log(f"Successfully loaded object with {len(meshes)} meshes")
+        return True
+    else:
+        log(f"Error: Unsupported file extension: {file_extension}")
         return False
 
 
@@ -403,7 +388,7 @@ def create_area_lighting() -> Dict[str, bpy.types.Object]:
     
     # Create new background with BRIGHTER ambient
     background = world_nodes.new(type='ShaderNodeBackground')
-    background.inputs['Colour'].default_value = (0.2, 0.2, 0.2, 1.0)  # DOUBLED brightness for ambient
+    background.inputs['Color'].default_value = (0.2, 0.2, 0.2, 1.0)  # DOUBLED brightness for ambient
     background.inputs['Strength'].default_value = 1.5  
     
     # Add world output

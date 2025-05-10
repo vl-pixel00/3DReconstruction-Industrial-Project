@@ -1,6 +1,6 @@
 import sys
 
-# CONFIGURATION: Update this path to point to your virtual environment's site-packages
+# Configuration: Update this path to point to your virtual environment's site-packages
 # Examples:
 #   - Linux/Mac: '/path/to/venv/lib/python3.11/site-packages'
 #   - Windows: 'C:\\path\\to\\venv\\Lib\\site-packages'
