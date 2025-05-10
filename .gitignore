@@ -1,4 +1,4 @@
-# Blender specific files
+# Blender-specific files
 *.blend1
 *.blend2
 *.blend3
@@ -39,7 +39,7 @@ renders/
 matrices/
 *.npy
 
-# IDE specific files
+# IDE-specific files
 .idea/
 .vscode/
 *.swp
