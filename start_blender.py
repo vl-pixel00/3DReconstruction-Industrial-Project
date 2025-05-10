@@ -10,7 +10,6 @@ VIRTUAL_ENV_SITE_PACKAGES = '/path/to/your/virtualenv/lib/python3.11/site-packag
 # Add your virtualenv's site-packages path:
 sys.path.append(VIRTUAL_ENV_SITE_PACKAGES)
 
-# Import required packages
 import numpy as np
 print("NumPy version inside Blender:", np.__version__)
 
@@ -19,4 +18,4 @@ import bpy
 print("Blender is running this script successfully.")
 
 # To run your Gaussian Splatting script, uncomment the line below:
-# exec(open("improved_gaussian_blender_script.py").read())
+# exec(open("gaussian_blender_script.py").read())
