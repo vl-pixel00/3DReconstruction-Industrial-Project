@@ -17,5 +17,5 @@ print("NumPy version inside Blender:", np.__version__)
 import bpy
 print("Blender is running this script successfully.")
 
-# To run your Gaussian Splatting script, uncomment the line below:
+# To run the optimised script, uncomment the line below:
 # exec(open("gaussian_blender_script.py").read())
