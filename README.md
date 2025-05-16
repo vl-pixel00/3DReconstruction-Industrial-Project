@@ -310,7 +310,7 @@ To ensure consistent results across experimental setups:
 
 This repository also incorporates a ComfyUI workflow for algorithmically generating 3D assets from textual specifications or reference imagery through integration of SDXL, SAM, and Hunyuan 3D 2.0 Multi-View technologies.
 
-> **Note**: The workflow JSON file is not included in this repository. Please contact the repository owner at [vl-pixel00@github.com](mailto:vl-pixel00@github.com) to request access to the ComfyUI workflow file and additional resources.
+**Note**: The workflow JSON file is not included in this repository and will be provided separately.
 
 <p align="center">
   <img src="examples/Image_to_3D_ComfyUI_workflow.png" width="800"/>
