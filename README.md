@@ -10,7 +10,7 @@ A Blender-based framework for generating optimised multi-view datasets and camer
 
 ## Project Overview
 
-This repository implements a systematic Blender-based pipeline for acquiring multiple calibrated views of a 3D object under controlled illumination conditions. The framework generates both high-resolution images and corresponding camera intrinsic/extrinsic matrices in `.npy` format, specifically formatted for Gaussian Splatting algorithmic applications.
+This repository implements a systematic Blender-based pipeline for acquiring multiple calibrated views of a 3D object under controlled illumination conditions. The framework generates both high-re[...]
 
 The procedural workflow encompasses:
 
@@ -117,6 +117,8 @@ import bpy
 print("Blender is running this script successfully.")
 ```
 
+> **Important**: You must replace the placeholder path in `start_blender.py` with the actual path to your virtual environment's site-packages directory. This is required for Blender to access your external Python libraries.
+
 To determine your site-packages path, execute:
 ```bash
 python -c "import site; print(site.getsitepackages()[0])"
@@ -175,19 +177,21 @@ blender --background --python start_blender.py -- --run gaussian_blender_script.
 1. Ensure Blender has launched with the `start_blender.py` script (Method 2)
 2. Navigate to the "Scripting" workspace in the Blender interface
 3. Open `gaussian_blender_script.py` from the file browser
-4. Locate or implement the `Args` class and modify the parameters accordingly:
+4. Locate the `Args` class near the end of the script (around line 771) and modify the default values as needed:
 
 ```python
 class Args:
     def __init__(self):
-        self.object_path = "/path/to/model.obj"  # Specify model path
-        self.output_dir = "/path/to/output"      # Define output directory
+        self.object_path = "./models/example_model.glb"  # Change to your actual 3D asset path
+        self.output_dir = "./output"                    # Change to your desired output path
         self.num_renders = 36
         self.engine = "BLENDER_EEVEE_NEXT"
         self.resolution = 2048
         self.use_area_lights = True
         self.separate_matrices_dir = True
 ```
+
+> **Note**: When running the script directly from Blender's Script Editor, you must modify these default paths to point to your actual model and desired output location.
 
 5. Execute the script via the interface button or Alt+P keyboard shortcut
 6. Monitor execution progress via the console output:
@@ -288,7 +292,7 @@ bpy.context.scene.use_nodes = False
 ┌─────────────────┐     ┌──────┘                 ┌──────────────────┐
 │ Results         │<────┤                        │ Automated        │
 │ Analysis        │     │                        │ Rendering        │
-└─────────────────┘     └────────────────────────└──────────────────┘
+└─────────────────┘     └────────────────────────└──────────────────�[...]
 ```
 
 ## Experimental Reproducibility
@@ -304,7 +308,9 @@ To ensure consistent results across experimental setups:
 
 ## ComfyUI Workflow for Image-to-3D Generation
 
-This repository also incorporates a ComfyUI workflow for algorithmically generating 3D assets from textual specifications or reference imagery through integration of SDXL, SAM, and Hunyuan 3D 2.0 MV.
+This repository also incorporates a ComfyUI workflow for algorithmically generating 3D assets from textual specifications or reference imagery through integration of SDXL, SAM, and Hunyuan 3D 2.0 Multi-View technologies.
+
+> **Note**: The workflow JSON file is not included in this repository. Please contact the repository owner at [vl-pixel00@github.com](mailto:vl-pixel00@github.com) to request access to the ComfyUI workflow file and additional resources.
 
 <p align="center">
   <img src="examples/Image_to_3D_ComfyUI_workflow.png" width="800"/>
@@ -436,8 +442,6 @@ git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
 ```
 
 ### Utilising the Image-to-3D Workflow
-
-Note: The workflow JSON file is not included in this repository and will be provided separately.
 
 1. Launch ComfyUI by running `python main.py` from the ComfyUI directory
 2. Access the web interface at http://localhost:8188
