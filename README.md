@@ -1,3 +1,6 @@
+## Disclaimer
+This repository is part of a university assignment and is provided for demonstration purposes only. Do not redistribute or reuse the code without permission.
+
 # Image Generation Tool Optimised for Gaussian Splatting
 
 A Blender-based framework for generating optimised multi-view datasets and camera matrices for 3D Gaussian Splatting reconstruction.
