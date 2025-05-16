@@ -493,10 +493,6 @@ The workflow implements a sequential pipeline integrating three computational mo
 - `requirements.txt` – Python dependency list for setting up the virtual environment
 - `README.md` – Project setup, usage instructions, and technical documentation
 
-## License
-
-MIT License
-
 ## References
 
 - [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
