@@ -437,7 +437,7 @@ git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
 
 ### Utilising the Image-to-3D Workflow
 
-**Note: The workflow JSON file is not included in this repository and will be provided separately.**
+#### Note: The workflow JSON file is not included in this repository and will be provided separately.
 
 1. Launch ComfyUI by running `python main.py` from the ComfyUI directory
 2. Access the web interface at http://localhost:8188
