@@ -302,11 +302,189 @@ To ensure consistent results across experimental setups:
 - Apply equivalent lighting methodology (`--use_area_lights True`)
 - Process outputs with consistent Gaussian Splatting implementation
 
+## ComfyUI Workflow for Image-to-3D Generation
+
+This repository also incorporates a ComfyUI workflow for algorithmically generating 3D assets from textual specifications or reference imagery through integration of SDXL, SAM, and Hunyuan 3D 2.0 Multi-View technologies.
+
+<p align="center">
+  <img src="examples/Image_to_3D_ComfyUI_workflow.png" width="800"/>
+</p>
+
+### ComfyUI Installation Guide
+
+ComfyUI is a powerful node-based interface for creating stable diffusion workflows. This section provides step-by-step instructions for installing ComfyUI and setting up the required custom nodes for the Image-to-3D generation workflow.
+
+#### Installation Steps
+
+##### Windows Installation
+
+1. Clone the ComfyUI repository:
+   ```bash
+   git clone https://github.com/comfyanonymous/ComfyUI.git
+   cd ComfyUI
+   ```
+
+2. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+
+3. Install PyTorch with CUDA support and other dependencies:
+   ```bash
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+   pip install -r requirements.txt
+   ```
+
+4. Create a custom nodes directory and install ComfyUI Manager:
+   ```bash
+   mkdir -p custom_nodes
+   cd custom_nodes
+   git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+   cd ..
+   ```
+
+5. Launch ComfyUI:
+   ```bash
+   python main.py
+   ```
+
+##### macOS Installation
+
+1. Clone the ComfyUI repository:
+   ```bash
+   git clone https://github.com/comfyanonymous/ComfyUI.git
+   cd ComfyUI
+   ```
+
+2. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install PyTorch with MPS acceleration and other dependencies:
+   ```bash
+   pip install torch torchvision torchaudio
+   pip install -r requirements.txt
+   ```
+
+4. Create a custom nodes directory and install ComfyUI Manager:
+   ```bash
+   mkdir -p custom_nodes
+   cd custom_nodes
+   git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+   cd ..
+   ```
+
+5. Launch ComfyUI:
+   ```bash
+   python main.py
+   ```
+
+##### Linux Installation
+
+1. Clone the ComfyUI repository:
+   ```bash
+   git clone https://github.com/comfyanonymous/ComfyUI.git
+   cd ComfyUI
+   ```
+
+2. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install PyTorch with CUDA support and other dependencies:
+   ```bash
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+   pip install -r requirements.txt
+   ```
+
+4. Create a custom nodes directory and install ComfyUI Manager:
+   ```bash
+   mkdir -p custom_nodes
+   cd custom_nodes
+   git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+   cd ..
+   ```
+
+5. Launch ComfyUI:
+   ```bash
+   python main.py
+   ```
+
+### Installing Required Custom Nodes
+
+The Image_to_3D_ComfyUI workflow requires specific custom node packages that can be installed using the ComfyUI Manager:
+
+1. Access the ComfyUI web interface at http://localhost:8188
+2. Click on the "Manager" tab in the interface
+3. Search for and install the following custom nodes:
+   - **ComfyUI Segment Anything**: Search for "segment anything" and install
+   - **ComfyUI-Hunyuan-3D**: Search for "hunyuan" and install
+   - **ComfyUI-Advanced-ControlNet**: Search for "advanced controlnet" and install
+
+Alternatively, you can manually install these repositories in the `custom_nodes` directory:
+
+```bash
+cd ComfyUI/custom_nodes
+git clone https://github.com/storyicon/comfyui_segment_anything
+git clone https://github.com/your-username/ComfyUI-Hunyuan-3D
+git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
+```
+
+### Utilising the Image-to-3D Workflow
+
+1. Launch ComfyUI by running `python main.py` from the ComfyUI directory
+2. Access the web interface at http://localhost:8188
+3. Import the provided workflow:
+   - Click the "Load" button in the top menu
+   - Select the `Image_to_3D_ComfyUI.json` file included in this repository
+4. Configure the workflow parameters:
+   - Adjust the text prompt to specify your desired subject
+   - Modify segmentation parameters if needed
+   - Set the number of views to generate (8-24 recommended)
+   - Specify the output directory for the generated assets
+5. Execute the workflow by clicking the "Queue Prompt" button
+6. The workflow will generate:
+   - High-fidelity base images from text prompts
+   - Segmented subject images with transparent backgrounds
+   - Multi-view perspectives suitable for 3D reconstruction
+
+### Workflow Architecture
+
+The workflow implements a sequential pipeline integrating three computational models:
+
+1. **SDXL Module**:
+   - Generates high-fidelity images from text prompts
+   - Implements style control via textual conditioning
+   - Outputs resolution-optimised base images for segmentation
+
+2. **SAM (Segment Anything) Module**:
+   - Performs automatic segmentation on generated imagery
+   - Implements background removal with alpha channel preservation
+   - Outputs isolated subject assets for 3D reconstruction
+
+3. **Hunyuan 3D 2.0 MV Module**:
+   - Processes segmented imagery into multi-view perspectives
+   - Generates consistent camera viewpoints with appropriate transformations
+   - Outputs multi-angle perspectives suitable for 3D reconstruction algorithms
+
+### Technical Considerations
+
+- **Memory Optimisation**: If you encounter VRAM issues, try reducing the resolution parameters in the workflow
+- **Initial Execution Latency**: First-time execution may involve downloading model files, which can take time
+- **Segmentation Refinement**: For challenging subjects, you may need to adjust the segmentation parameters
+- **Output Integration**: The multi-view images generated by this workflow can be directly used with the Blender-based pipeline described earlier in this README
+
 ## Repository Structure
 
 - `examples/` – Sample visual output generated by the Gaussian Splatting pipeline
 - `start_blender.py` – Launches Blender with external Python environment integration
 - `gaussian_blender_script.py` – Main script for rendering multi-view images and exporting camera matrices
+- `Image_to_3D_ComfyUI.json` - ComfyUI workflow for text-to-3D generation via SDXL and Hunyuan 3D
 - `requirements.txt` – Python dependency list for setting up the virtual environment
 - `README.md` – Project setup, usage instructions, and technical documentation
 
@@ -319,3 +497,9 @@ MIT License
 - [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
 - [Blender Python API Documentation](https://docs.blender.org/api/current/index.html)
 - [Objaverse-XL Rendering Source](https://github.com/allenai/objaverse-xl/tree/main/scripts/rendering)
+- [ComfyUI Official Repository](https://github.com/comfyanonymous/ComfyUI)
+- [Segment Anything Model Technical Paper](https://arxiv.org/abs/2304.02643)
+- [ComfyUI Segment Anything Integration](https://github.com/storyicon/comfyui_segment_anything)
+- [Stable Diffusion XL Technical Report](https://arxiv.org/abs/2307.01952)
+- [Hunyuan 3D: Generalised 3D Generation Framework](https://hunyuan-3d.github.io/)
+- [ComfyUI Manager Implementation](https://github.com/ltdrdata/ComfyUI-Manager)
