@@ -408,7 +408,3 @@ This integration of AI-assisted parameter tuning significantly improves the effi
 - [Segment Anything Model](https://arxiv.org/abs/2304.02643)
 - [Stable Diffusion XL](https://arxiv.org/abs/2307.01952)
 - [Hunyuan 3D Generation Framework](https://github.com/Tencent-Hunyuan/Hunyuan3D-2)
-
----
-
-*This project was developed as part of computer graphics coursework, demonstrating practical applications of 3D reconstruction and automated dataset generation techniques.*
