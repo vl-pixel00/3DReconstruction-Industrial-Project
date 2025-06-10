@@ -10,7 +10,7 @@ This repository implements a production-scale 3D reconstruction pipeline develop
 **Innovation**: Integration of 5+ state-of-the-art technologies  
 **Framework**: University industrial project with real-world applications  
 
-# Blender-Based Multi-View Dataset Generator for Gaussian Splatting
+## Blender-Based Multi-View Dataset Generator for Gaussian Splatting
 
 A Python framework that uses Blender to automatically generate multi-view image datasets and camera matrices optimised for 3D Gaussian Splatting reconstruction.
 
