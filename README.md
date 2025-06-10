@@ -16,7 +16,7 @@ A Python framework that uses Blender to automatically generate multi-view image 
 
 <p align="center">
   <img src="examples/guitar_output.png" width="400"/>
-  <img src="examples/sofa_output.png" width="400"/>
+  <img src="examples/sofa_output.png" width="600"/>
 </p>
 <p align="center"><em>Gaussian Splat Examples</em></p>
 
@@ -411,4 +411,4 @@ This integration of AI-assisted parameter tuning significantly improves the effi
 
 ---
 
-*This project was developed as part of advanced computer graphics coursework, demonstrating practical applications of 3D reconstruction and automated dataset generation techniques.*
+*This project was developed as part of computer graphics coursework, demonstrating practical applications of 3D reconstruction and automated dataset generation techniques.*
