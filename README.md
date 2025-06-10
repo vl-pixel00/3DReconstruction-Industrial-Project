@@ -295,7 +295,7 @@ bpy.context.scene.use_nodes = False
 ┌─────────────────┐     ┌──────┘                 ┌──────────────────┐
 │ Results         │<────┤                        │ Automated        │
 │ Analysis        │     │                        │ Rendering        │
-└─────────────────┘     └────────────────────────└──────────────────�[...]
+└─────────────────┘     └────────────────────────└──────────────────┘
 ```
 
 ## Experimental Reproducibility
@@ -441,6 +441,24 @@ git clone https://github.com/storyicon/comfyui_segment_anything
 git clone https://github.com/your-username/ComfyUI-Hunyuan-3D
 git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
 ```
+### Exemplification of Three-Dimensional Reconstruction Methodology
+
+<p align="center">
+  <table>
+    <tr>
+      <td width="50%"><img src="examples/table_058.jpg" width="100%" alt="Input Image of Table"/></td>
+      <td width="50%">
+        <a href="examples/table_058_3Dvideo.mp4">
+          <img src="examples/table_058.jpg" width="100%" alt="3D Model Demo (Click to Play)"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Input Image</b></td>
+      <td align="center"><b>Generated 3D Model (Click to Play)</b></td>
+    </tr>
+  </table>
+</p>
 
 ### Utilising the Image-to-3D Workflow
 
