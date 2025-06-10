@@ -6,9 +6,8 @@ This repository is part of a university assignment and is provided for demonstra
 A Blender-based framework for generating optimised multi-view datasets and camera matrices for 3D Gaussian Splatting reconstruction.
 
 <p align="center">
-  <img src="examples/guitar_output.png" width="250"/>
-  <img src="examples/sofa_output.png" width="250"/>
-  <img src="examples/table_output.png" width="250"/>
+  <img src="examples/guitar_output.png" width="400"/>
+  <img src="examples/sofa_output.png" width="400"/>
 </p>
 
 ## Project Overview
@@ -441,18 +440,22 @@ git clone https://github.com/storyicon/comfyui_segment_anything
 git clone https://github.com/your-username/ComfyUI-Hunyuan-3D
 git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
 ```
-### Exemplification of Three-Dimensional Reconstruction Methodology
+## Exemplification of Three-Dimensional Reconstruction Methodology
 
 <p align="center">
   <table>
     <tr>
-      <td width="50%"><img src="examples/table_058.png" width="100%" alt="Input Image of Table"/></td>
+      <td width="50%" style="vertical-align: top;">
+        <img src="examples/table_058.png" width="100%" alt="Input Image of Table"/>
+        <br>
+        <img src="examples/table_058_parameters.png" width="100%" alt="Parameters Used for Table Reconstruction"/>
+      </td>
       <td width="50%">
         <img src="examples/table_058_3Dvideo.gif" width="100%" alt="3D Model Animation"/>
       </td>
     </tr>
     <tr>
-      <td align="center"><b>Input Image</b></td>
+      <td align="center"><b>Input Image with Parameters</b></td>
       <td align="center"><b>Generated 3D Model (Animated)</b></td>
     </tr>
   </table>
