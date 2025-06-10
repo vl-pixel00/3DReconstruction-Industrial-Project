@@ -392,7 +392,7 @@ This integration of AI-assisted parameter tuning significantly improves the effi
 
 ## Repository Structure
 
-- `examples/` – Sample outputs demonstrating expected results
+- `examples` – Sample outputs demonstrating expected results
 - `start_blender.py` – Environment integration script for external Python libraries
 - `gaussian_blender_script.py` – Main rendering and matrix export script
 - `Image_to_3D_ComfyUI.json` – ComfyUI workflow configuration for text-to-3D generation
