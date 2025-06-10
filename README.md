@@ -48,8 +48,8 @@ This approach uses Blender's internal Python interpreter without requiring exter
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/vl-pixel00/blender-view-gen.git
-cd blender-view-gen
+git clone https://github.com/vl-pixel00/3DReconstruction-Industrial-Project.git
+cd 3DReconstruction-Industrial-Project
 ```
 
 2. Execute the script via Blender's command-line interface:
