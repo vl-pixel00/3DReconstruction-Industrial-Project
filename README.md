@@ -1,7 +1,7 @@
 ## Disclaimer
 This repository is part of a university assignment and is provided for demonstration purposes only. Please do not redistribute or reuse the code without permission.
 
-*Available only for educational and research use.*
+*Available only for educational and research purposes.*
 
 ## 3D Reconstruction Industrial Project
 This repository implements a production-scale 3D reconstruction pipeline developed for university industrial project coursework. The framework integrates modern AI technologies with traditional 3D graphics tools to create an automated workflow from text descriptions to multi-view datasets for Gaussian Splatting reconstruction.
