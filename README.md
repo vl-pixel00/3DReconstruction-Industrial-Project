@@ -16,7 +16,7 @@ A Python framework that uses Blender to automatically generate multi-view image 
 
 <p align="center">
   <img src="examples/guitar_output.png" width="400"/>
-  <img src="examples/sofa_output.png" width="600"/>
+  <img src="examples/sofa_output.png" width="400"/>
 </p>
 <p align="center"><em>Gaussian Splat Examples</em></p>
 
