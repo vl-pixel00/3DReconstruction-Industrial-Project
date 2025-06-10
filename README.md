@@ -446,10 +446,10 @@ git clone https://github.com/your-username/ComfyUI-Advanced-ControlNet
 <p align="center">
   <table>
     <tr>
-      <td width="50%"><img src="examples/table_058.jpg" width="100%" alt="Input Image of Table"/></td>
+      <td width="50%"><img src="examples/table_058.png" width="100%" alt="Input Image of Table"/></td>
       <td width="50%">
         <a href="examples/table_058_3Dvideo.mp4">
-          <img src="examples/table_058.jpg" width="100%" alt="3D Model Demo (Click to Play)"/>
+          <img src="examples/table_058.png" width="100%" alt="3D Model Demo (Click to Play)"/>
         </a>
       </td>
     </tr>
