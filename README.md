@@ -406,4 +406,4 @@ This integration of AI-assisted parameter tuning significantly improves the effi
 
 ---
 
-**This repository contains a computer graphics coursework project developed for a university assignment in collaboration with an industry partner. This code is shared for educational purposes only. Please do not redistribute or reuse without permission.**
+***This repository contains a computer graphics coursework project developed for a university assignment in collaboration with an industry partner. This code is shared for educational purposes only. Please do not redistribute or reuse without permission.***
