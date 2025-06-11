@@ -1,7 +1,4 @@
-## Disclaimer
-This repository is part of a university assignment and is provided for demonstration purposes only. Please do not redistribute or reuse the code without permission.
-
-## 3D Reconstruction Industrial Project
+## 3D Reconstruction - Industrial Project
 This repository implements a production-scale 3D reconstruction pipeline developed for university industrial project coursework. The framework integrates modern AI technologies with traditional 3D graphics tools to create an automated workflow from text descriptions to multi-view datasets for Gaussian Splatting reconstruction.
 
 **Scope**: Complete automated 3D content generation pipeline  
@@ -406,3 +403,7 @@ This integration of AI-assisted parameter tuning significantly improves the effi
 - [Segment Anything Model](https://arxiv.org/abs/2304.02643)
 - [Stable Diffusion XL](https://arxiv.org/abs/2307.01952)
 - [Hunyuan 3D Generation Framework](https://github.com/Tencent-Hunyuan/Hunyuan3D-2)
+
+---
+
+**This repository contains a computer graphics coursework project developed for a university assignment in collaboration with an industry partner. This code is shared for educational purposes only. Please do not redistribute or reuse without permission.**
