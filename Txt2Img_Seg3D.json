@@ -1,0 +1,2022 @@
+{
+  "id": "46837200-4c28-4bd0-91e5-94dfcf9dca8b",
+  "revision": 0,
+  "last_node_id": 76,
+  "last_link_id": 86,
+  "nodes": [
+    {
+      "id": 38,
+      "type": "VAEDecode",
+      "pos": [
+        -3113.138671875,
+        -237.1608428955078
+      ],
+      "size": [
+        200,
+        50
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 39
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 28,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -3970.7333984375,
+        -299.1424255371094
+      ],
+      "size": [
+        210.04647827148438,
+        88
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 57
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a modern wooden dining table, centred, full view, on a white background, studio lighting, product photo"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 29,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -3970.56201171875,
+        -162.82106018066406
+      ],
+      "size": [
+        210.04647827148438,
+        88
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 77
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "close-up, cropped, blurry, cluttered background, floor, room, watermark, text, logo, extra legs, distorted, shadows, noise, chairs, stools, people, dining set, objects on table, plates, cups, food, background furniture, reflections, glass surfaces"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 34,
+      "type": "Note",
+      "pos": [
+        -4020.32763671875,
+        368.3742370605469
+      ],
+      "size": [
+        301.3620300292969,
+        217.82986450195312
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Empty Latent Image",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This node defines the image resolution by setting the Width and Height.\n\nMemo: For SDXL, it’s best to stick to one of the following trained resolutions:\n\t•\t1024 × 1024\n\t•\t1152 × 896\n\t•\t896 × 1152\n\t•\t1216 × 832\n\t•\t832 × 1216\n\t•\t1344 × 768\n\t•\t768 × 1344\n\t•\t1536 × 640\n\t•\t640 × 1536"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": [
+        -4533.73681640625,
+        300.14697265625
+      ],
+      "size": [
+        296.615234375,
+        129.4741973876953
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Text Prompts",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "These nodes are where you enter your text for:\n– what you want to see in the image (Positive Prompt, shown in green),\n– or what you want to avoid (Negative Prompt, shown in red)."
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 24,
+      "type": "Note",
+      "pos": [
+        -4588.64453125,
+        -437.1781005859375
+      ],
+      "size": [
+        348.69793701171875,
+        155.72422790527344
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Load Checkpoint BASE",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This is a checkpoint model loader. \n\n - This is set up automatically with the optimal settings for whatever SD model version you wish to use.\n - In this workflow, it is for the Base SDXL model.\n \nMemo: When loading this workflow, make sure that you manually choose your own \"local\" model. This also applies to LoRas and all their deviations."
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 30,
+      "type": "Note",
+      "pos": [
+        -3971.6787109375,
+        -28.931528091430664
+      ],
+      "size": [
+        219.38436889648438,
+        88
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: CLIP Encode (BASE)",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "These nodes take your prompt text and apply the best CLIP settings for the chosen checkpoint model – in this case, SDXL Base."
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 35,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        -3635.897216796875,
+        -860.3277587890625
+      ],
+      "size": [
+        287.7681884765625,
+        334
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 59
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 29
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 30
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 31
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": 32
+        },
+        {
+          "name": "end_at_step",
+          "type": "INT",
+          "widget": {
+            "name": "end_at_step"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            39
+          ]
+        }
+      ],
+      "title": "KSampler - BASE",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        331938673019778,
+        "randomize",
+        30,
+        7.5,
+        "dpmpp_3m_sde_gpu",
+        "karras",
+        0,
+        30,
+        "enable"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        -3169.728515625,
+        -137.1597900390625
+      ],
+      "size": [
+        320,
+        120
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: VAE Decoder",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This node takes the latent data from the KSampler and decodes it into a visible image using the VAE.\n\nVAE = Latent → Visible\n\nOnce decoded, the image can be passed to the Save Image node and saved as a PNG."
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 58,
+      "type": "Note",
+      "pos": [
+        -1711.3011474609375,
+        318.34747314453125
+      ],
+      "size": [
+        295.536376953125,
+        88
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: GroundingDinoModelLoader",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "GroundingDinoModelLoader = loads the model that can detect objects in an image based on a written description."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 14,
+      "type": "GroundingDinoModelLoader (segment anything)",
+      "pos": [
+        -1756.60791015625,
+        216.80020141601562
+      ],
+      "size": [
+        399.5259704589844,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "GROUNDING_DINO_MODEL",
+          "type": "GROUNDING_DINO_MODEL",
+          "links": [
+            43
+          ]
+        }
+      ],
+      "title": "GroundingDinoModelLoader",
+      "properties": {
+        "cnr_id": "comfyui_segment_anything",
+        "ver": "ab6395596399d5048639cdab7e44ec9fae857a93",
+        "Node name for S&R": "GroundingDinoModelLoader (segment anything)"
+      },
+      "widgets_values": [
+        "GroundingDINO_SwinT_OGC (694MB)"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 43,
+      "type": "ImageOnlyCheckpointLoader",
+      "pos": [
+        24.96271514892578,
+        -233.59304809570312
+      ],
+      "size": [
+        369.6000061035156,
+        98
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            47
+          ]
+        },
+        {
+          "label": "CLIP_VISION",
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "slot_index": 1,
+          "links": [
+            45
+          ]
+        },
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            54
+          ]
+        }
+      ],
+      "title": "3D Model Weights Loader",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "ImageOnlyCheckpointLoader",
+        "models": [
+          {
+            "name": "hunyuan3d-dit-v2-mv.safetensors",
+            "url": "https://huggingface.co/tencent/Hunyuan3D-2mv/resolve/main/hunyuan3d-dit-v2-mv/model.fp16.safetensors?download=true",
+            "directory": "checkpoints"
+          }
+        ]
+      },
+      "widgets_values": [
+        "hunyuan3d-dit-v2-mv.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 44,
+      "type": "MarkdownNote",
+      "pos": [
+        2.0730831623077393,
+        -428.1840515136719
+      ],
+      "size": [
+        416.6540832519531,
+        146.57015991210938
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: 3D Model Weights Loader",
+      "properties": {},
+      "widgets_values": [
+        "Download [hunyuan3d-dit-v2-mv/model.fp16.safetensors](https://huggingface.co/tencent/Hunyuan3D-2mv/blob/main/hunyuan3d-dit-v2-mv/model.fp16.safetensors) and rename to **hunyuan3d-dit-v2-mv.safetensors**\n\nPut it in the **ComfyUI/models/checkpoints** directory\n\nThis is the default 3D reconstruction model used in the workflow (Hunyuan 3D 2.0 MV), but you’re free to use a different compatible model if you prefer. Just make sure the filename and architecture match what’s expected by the loader node."
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 46,
+      "type": "CLIPVisionEncode",
+      "pos": [
+        466.3553771972656,
+        117.0952377319336
+      ],
+      "size": [
+        253.60000610351562,
+        78
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip_vision",
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 45
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 86
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CLIP_VISION_OUTPUT",
+          "name": "CLIP_VISION_OUTPUT",
+          "type": "CLIP_VISION_OUTPUT",
+          "slot_index": 0,
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "CLIPVisionEncode"
+      },
+      "widgets_values": [
+        "none"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 47,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        650.8010864257812,
+        -703.712646484375
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            49
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "ModelSamplingAuraFlow"
+      },
+      "widgets_values": [
+        1.0000000000000002
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 61,
+      "type": "MarkdownNote",
+      "pos": [
+        426.5700378417969,
+        242.0884552001953
+      ],
+      "size": [
+        335.169921875,
+        161.79248046875
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: CLIP Vision Encode",
+      "properties": {},
+      "widgets_values": [
+        "CLIP Vision Encode = translates an image into something the model can interpret and reason about.\n\nThe crop option centres the image to match CLIP’s expected input size. This helps avoid distortion, but may trim the edges of the image. Disable it if you want to preserve the full frame."
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 48,
+      "type": "Hunyuan3Dv2ConditioningMultiView",
+      "pos": [
+        984.2979736328125,
+        -236.68809509277344
+      ],
+      "size": [
+        268.79998779296875,
+        86
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "front",
+          "name": "front",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 48
+        },
+        {
+          "label": "left",
+          "name": "left",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": null
+        },
+        {
+          "label": "back",
+          "name": "back",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": null
+        },
+        {
+          "label": "right",
+          "name": "right",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            50
+          ]
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "slot_index": 1,
+          "links": [
+            51
+          ]
+        }
+      ],
+      "title": "3D Conditioning (Multi-View)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "Hunyuan3Dv2ConditioningMultiView"
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        -3529.370849609375,
+        425.71820068359375
+      ],
+      "size": [
+        219.3664093017578,
+        110.9494857788086
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Step Control",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "These let you control the number of sampling steps and define when to switch over to the Refiner, if you’re using the Refiner within the same workflow."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 45,
+      "type": "EmptyLatentHunyuan3Dv2",
+      "pos": [
+        1361.8878173828125,
+        252.6840362548828
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            52
+          ]
+        }
+      ],
+      "title": "Empty Latent Generator (3D Models)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "EmptyLatentHunyuan3Dv2"
+      },
+      "widgets_values": [
+        3072,
+        1
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 49,
+      "type": "KSampler",
+      "pos": [
+        1351.2437744140625,
+        -989.5155029296875
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 49
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 50
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 51
+        },
+        {
+          "label": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 52
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        73151317711835,
+        "randomize",
+        20,
+        7.5,
+        "euler",
+        "normal",
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 62,
+      "type": "MarkdownNote",
+      "pos": [
+        958.9737548828125,
+        -107.279052734375
+      ],
+      "size": [
+        321.69525146484375,
+        187.73623657226562
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: 3D Conditioning (Multi-View)",
+      "properties": {},
+      "widgets_values": [
+        "This node prepares image inputs and feature encodings (like CLIP vision outputs) for use in 3D reconstruction models that support multi-view input, such as Hunyuan3D.\n\nIt ensures all views are correctly formatted, aligned, and structured so the model can combine them effectively during generation.\n\n\nThe Front, Left, Back, Right settings label the camera angle of each input image, helping the model place them correctly in 3D space.\nUse Positive to include the view in the reconstruction, or Negative to downplay or exclude it. This guides the model on which perspectives to trust during generation."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 63,
+      "type": "MarkdownNote",
+      "pos": [
+        1330.1566162109375,
+        379.55194091796875
+      ],
+      "size": [
+        321.69525146484375,
+        187.73623657226562
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Empty Latent Generator (3D Models)",
+      "properties": {},
+      "widgets_values": [
+        "This node creates a blank latent tensor (an empty placeholder) that matches the expected shape and resolution for 3D reconstruction models like Hunyuan3D.\n\nIt acts as a starting point for the model to “paint” or reconstruct the 3D structure based on the conditioning inputs (images, prompts, etc).\n\n- Resolution sets the size of the 3D latent space; higher values can give more detail but take more memory and time.\n- Batch size controls how many 3D reconstructions are generated at once. Set to 1 unless you’re generating multiple objects in a single pass."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 64,
+      "type": "MarkdownNote",
+      "pos": [
+        1722.7230224609375,
+        -973.0432739257812
+      ],
+      "size": [
+        480.3688659667969,
+        233.74984741210938
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: KSampler",
+      "properties": {},
+      "widgets_values": [
+        "KSampler gradually removes noise using your prompt and model settings, shaping the final output step by step.\n\n\nKey Settings:\n\n- Seed – Controls randomness. Use the same seed to reproduce identical results.\n\n- Control after generate – If enabled, generates a new random seed after each run.\n\n- Steps – Number of denoising passes. More steps = finer results, but slower.\n\n- CFG (Classifier-Free Guidance) – Tells the model how closely to follow your prompt.\n\n- Lower = looser, more creative\n\n- Higher (up to 10) = stricter, more accurate\n\n- Sampler_Name – The algorithm used to perform denoising (e.g. Euler, DPM++). Different samplers produce different textures or detail.\n\n- Scheduler – Decides how each step is spaced out and weighted during denoising.\n\n- Denoise – A value from 0 to 1 that controls how much noise is removed.\n\n- 1.0 = full denoising from scratch\n\n- Lower values preserve more of the original latent (useful for inpainting or tweaking)"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 60,
+      "type": "MarkdownNote",
+      "pos": [
+        612.167724609375,
+        -590.5728759765625
+      ],
+      "size": [
+        352.18310546875,
+        195.81883239746094
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: ModelSamplingAuraFlow",
+      "properties": {},
+      "widgets_values": [
+        "This node manages how the model processes input views during 3D reconstruction. It supports multiple images, which helps the model generate a more complete and accurate 3D result by combining different angles.\n\nYou can add multiple Load Image nodes to feed the model more views. The more consistent angles you provide, the better the reconstruction quality.\n\nThe shift setting offsets the viewing angle of the input images, helping control how the model blends perspectives during 3D reconstruction. Small shifts can improve depth and structure in multi-view setups."
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 65,
+      "type": "MarkdownNote",
+      "pos": [
+        1617.3228759765625,
+        -283.88140869140625
+      ],
+      "size": [
+        355.1986999511719,
+        210.07186889648438
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: 3D VAE Decoder",
+      "properties": {},
+      "widgets_values": [
+        "3D VAE Decoder = decodes the latent 3D output from the model into a visible image using a VAE (Variational Autoencoder). It’s the final step that converts internal data into something you can view or save.\n\nSettings:\n\n- num_chunks – Splits the decoding process into smaller chunks to save memory. Useful for large outputs or limited VRAM setups.\n\n- octree_resolution – Controls the detail level in the 3D-to-image decoding process. Higher values can give more visual fidelity but use more memory."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 51,
+      "type": "VoxelToMeshBasic",
+      "pos": [
+        2194.956787109375,
+        -256.1558837890625
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "voxel",
+          "name": "voxel",
+          "type": "VOXEL",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MESH",
+          "name": "MESH",
+          "type": "MESH",
+          "slot_index": 0,
+          "links": [
+            56
+          ]
+        }
+      ],
+      "title": "Voxel to Mesh Converter",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "VoxelToMeshBasic"
+      },
+      "widgets_values": [
+        0.6000000000000001
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 66,
+      "type": "MarkdownNote",
+      "pos": [
+        2132.609375,
+        -145.38160705566406
+      ],
+      "size": [
+        341.4446716308594,
+        195.74473571777344
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: Voxel to Mesh Converter",
+      "properties": {},
+      "widgets_values": [
+        "This node converts voxel data (a 3D grid of values) into a 3D mesh made of vertices, edges, and faces. This mesh can then be viewed in 3D software or exported to formats like .obj or .ply.\n\nThis is a basic version, best suited for clean voxel outputs. For higher-quality or optimised results, further post-processing might be needed.\n\nThe threshold decides which parts of the voxel grid get turned into mesh.\n\n- Higher values = only the solid, confident areas are kept\n\n- Lower values = more detail, but can add unwanted noise\n\nIt controls where the surface of the mesh gets drawn.\n"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 52,
+      "type": "SaveGLB",
+      "pos": [
+        2590.53564453125,
+        -577.2473754882812
+      ],
+      "size": [
+        620,
+        760
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "mesh",
+          "name": "mesh",
+          "type": "MESH",
+          "link": 56
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "SaveGLB",
+        "Camera Info": {
+          "position": {
+            "x": 13.101903111160993,
+            "y": 0.6335129481527257,
+            "z": 5.677155780561645
+          },
+          "target": {
+            "x": 0,
+            "y": 0.889328041403499,
+            "z": 0
+          },
+          "zoom": 1,
+          "cameraType": "perspective"
+        }
+      },
+      "widgets_values": [
+        "mesh/ComfyUI",
+        ""
+      ]
+    },
+    {
+      "id": 32,
+      "type": "PrimitiveNode",
+      "pos": [
+        -3529.206787109375,
+        172.170654296875
+      ],
+      "size": [
+        219.18994140625,
+        84.75698852539062
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "links": [
+            32
+          ]
+        }
+      ],
+      "title": "steps",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        30,
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 33,
+      "type": "PrimitiveNode",
+      "pos": [
+        -3529.132080078125,
+        298.78564453125
+      ],
+      "size": [
+        219.64944458007812,
+        85.21648406982422
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "widget": {
+            "name": "end_at_step"
+          },
+          "slot_index": 0,
+          "links": [
+            33
+          ]
+        }
+      ],
+      "title": "end_at_step",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        30,
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 31,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -4019.58154296875,
+        220.96763610839844
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 23,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -4588.6162109375,
+        -586.5309448242188
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            59
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            57,
+            77
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            58
+          ]
+        }
+      ],
+      "title": "Load Checkpoint - BASE",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 59,
+      "type": "Note",
+      "pos": [
+        -1238.39013671875,
+        -467.1773376464844
+      ],
+      "size": [
+        325.84814453125,
+        178.89920043945312
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: GroundingDinoSAMSegment",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "GroundingDinoSAMSegment = detects objects from text and segments them cleanly using SAM.\n\nHigher threshold - Only detects objects that the model is very confident about.\n(Fewer but more accurate results.)\n\nLower threshold - Allows less confident detections.\n(More results, but higher chance of including false positives.)"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 12,
+      "type": "SAMModelLoader (segment anything)",
+      "pos": [
+        -1720.905029296875,
+        -88.87447357177734
+      ],
+      "size": [
+        335.6919860839844,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "title": "SAMModelLoader (Segment Anything)",
+      "properties": {
+        "cnr_id": "comfyui_segment_anything",
+        "ver": "ab6395596399d5048639cdab7e44ec9fae857a93",
+        "Node name for S&R": "SAMModelLoader (segment anything)"
+      },
+      "widgets_values": [
+        "sam_vit_h (2.56GB)"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 57,
+      "type": "Note",
+      "pos": [
+        -1713.6776123046875,
+        7.838000297546387
+      ],
+      "size": [
+        326.2574157714844,
+        88
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: SAMModelLoader (Segment Anything)",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "SAMModelLoader = loads the segmentation model so it can “see” and split up the image into meaningful parts."
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 36,
+      "type": "Note",
+      "pos": [
+        -3328.9638671875,
+        -876.9720458984375
+      ],
+      "size": [
+        372.07763671875,
+        393.372802734375
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Memo: KSampler - General Information",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Adjust the parameters based on your goals and visual preferences:\n\n\t•\tadd_noise: enabled – Adds random noise to the image so the model can clean it up (denoise it).\n\t•\treturn_with_leftover_noise: enabled – Passes the image, along with any remaining noise, to the next KSampler in the chain.\n\n\nSettings to keep an eye on:\n\t•\tcontrol_after_generate – Generates a new random seed after each run.\n\t•\tsteps – Number of denoising passes. Each step adds (positive prompt) or removes (negative prompt) pixels based on what the model thinks should be there.\n\t•\tcfg – Controls how strictly the image follows your prompt:\n\t•\tLower = looser, more creative, but softer or blurrier results.\n\t•\tHigher (up to 10) = sharper, more precise, but may cause harsh edges or unnatural details.\n\t•\tsampler_name – The type of sampler. Some perform better with fewer steps, others need more—trial and error is key.\n\t•\tscheduler – Determines how the denoising steps are spaced out.\n\t•\tstart_at_step – Defines when the KSampler starts denoising. Starting at 0 is equivalent to a denoise value of 1.0.\n\t•\tend_at_step – Sets when the KSampler stops. If any noise remains and return_with_leftover_noise is enabled, it’ll be passed on to the next KSampler."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveNode",
+      "pos": [
+        -4534.91796875,
+        100.02918243408203
+      ],
+      "size": [
+        300,
+        160
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 0,
+          "links": [
+            27
+          ]
+        }
+      ],
+      "title": "Negative Prompt (Text)",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "close-up, cropped, blurry, cluttered background, floor, room, watermark, text, logo, extra legs, distorted, shadows, noise, chairs, stools, people, dining set, objects on table, plates, cups, food, background furniture, reflections, glass surfaces"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 50,
+      "type": "VAEDecodeHunyuan3D",
+      "pos": [
+        1640.0162353515625,
+        -428.38836669921875
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 53
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "label": "VOXEL",
+          "name": "VOXEL",
+          "type": "VOXEL",
+          "slot_index": 0,
+          "links": [
+            55
+          ]
+        }
+      ],
+      "title": "3D VAE Decoder",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.31",
+        "Node name for S&R": "VAEDecodeHunyuan3D"
+      },
+      "widgets_values": [
+        8000,
+        256
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 13,
+      "type": "GroundingDinoSAMSegment (segment anything)",
+      "pos": [
+        -1269.1343994140625,
+        -636.08154296875
+      ],
+      "size": [
+        404.1744079589844,
+        122
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sam_model",
+          "type": "SAM_MODEL",
+          "link": 78
+        },
+        {
+          "name": "grounding_dino_model",
+          "type": "GROUNDING_DINO_MODEL",
+          "link": 43
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            86
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "title": "GroundingDinoSAMSegment",
+      "properties": {
+        "cnr_id": "comfyui_segment_anything",
+        "ver": "ab6395596399d5048639cdab7e44ec9fae857a93",
+        "Node name for S&R": "GroundingDinoSAMSegment (segment anything)"
+      },
+      "widgets_values": [
+        "a wooden table",
+        0.3500000000000001
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 25,
+      "type": "PrimitiveNode",
+      "pos": [
+        -4534.91796875,
+        -99.97115325927734
+      ],
+      "size": [
+        300,
+        160
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 0,
+          "links": [
+            25
+          ]
+        }
+      ],
+      "title": "Positive Prompt (Text)",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "a modern wooden dining table, centred, full view, on a white background, studio lighting, product photo"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      25,
+      25,
+      0,
+      28,
+      1,
+      "STRING"
+    ],
+    [
+      27,
+      26,
+      0,
+      29,
+      1,
+      "STRING"
+    ],
+    [
+      29,
+      28,
+      0,
+      35,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      30,
+      29,
+      0,
+      35,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      31,
+      31,
+      0,
+      35,
+      3,
+      "LATENT"
+    ],
+    [
+      32,
+      32,
+      0,
+      35,
+      4,
+      "INT"
+    ],
+    [
+      33,
+      33,
+      0,
+      35,
+      5,
+      "INT"
+    ],
+    [
+      39,
+      35,
+      0,
+      38,
+      0,
+      "LATENT"
+    ],
+    [
+      43,
+      14,
+      0,
+      13,
+      1,
+      "GROUNDING_DINO_MODEL"
+    ],
+    [
+      45,
+      43,
+      1,
+      46,
+      0,
+      "CLIP_VISION"
+    ],
+    [
+      47,
+      43,
+      0,
+      47,
+      0,
+      "MODEL"
+    ],
+    [
+      48,
+      46,
+      0,
+      48,
+      0,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      49,
+      47,
+      0,
+      49,
+      0,
+      "MODEL"
+    ],
+    [
+      50,
+      48,
+      0,
+      49,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      51,
+      48,
+      1,
+      49,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      52,
+      45,
+      0,
+      49,
+      3,
+      "LATENT"
+    ],
+    [
+      53,
+      49,
+      0,
+      50,
+      0,
+      "LATENT"
+    ],
+    [
+      54,
+      43,
+      2,
+      50,
+      1,
+      "VAE"
+    ],
+    [
+      55,
+      50,
+      0,
+      51,
+      0,
+      "VOXEL"
+    ],
+    [
+      56,
+      51,
+      0,
+      52,
+      0,
+      "MESH"
+    ],
+    [
+      57,
+      23,
+      1,
+      28,
+      0,
+      "CLIP"
+    ],
+    [
+      58,
+      23,
+      2,
+      38,
+      1,
+      "VAE"
+    ],
+    [
+      59,
+      23,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      77,
+      23,
+      1,
+      29,
+      0,
+      "CLIP"
+    ],
+    [
+      78,
+      12,
+      0,
+      13,
+      0,
+      "SAM_MODEL"
+    ],
+    [
+      85,
+      38,
+      0,
+      13,
+      2,
+      "IMAGE"
+    ],
+    [
+      86,
+      13,
+      0,
+      46,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Load in BASE SDXL Model",
+      "bounding": [
+        -4599.1484375,
+        -671.53076171875,
+        369.97052001953125,
+        406.76422119140625
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Text Prompts",
+      "bounding": [
+        -4554.00048828125,
+        -177.31179809570312,
+        339,
+        622
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Base Prompt",
+      "bounding": [
+        -3997.572265625,
+        -377.78759765625,
+        264.3747253417969,
+        460.5762023925781
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Empty Latent Image",
+      "bounding": [
+        -4039.08154296875,
+        139.8477325439453,
+        339.1800231933594,
+        458.3977355957031
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Step Control",
+      "bounding": [
+        -3565.69189453125,
+        84.1962661743164,
+        284,
+        524
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "VAE Decoder",
+      "bounding": [
+        -3188.908203125,
+        -321.76068115234375,
+        360,
+        350
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "SAMModelLoader (Segment Anything)",
+      "bounding": [
+        -1760.97509765625,
+        -176.75645446777344,
+        415.44354248046875,
+        282.5003662109375
+      ],
+      "color": "#8AA",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "GroundingDinoModelLoader",
+      "bounding": [
+        -1787.81591796875,
+        122.03733825683594,
+        459.9376525878906,
+        308.47015380859375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "GroundingDinoSAMSegment",
+      "bounding": [
+        -1309.4815673828125,
+        -719.2811279296875,
+        471.89190673828125,
+        445.6869812011719
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "3D Model Weights Loader",
+      "bounding": [
+        -26.2744140625,
+        -505.59613037109375,
+        481.9227600097656,
+        400.6333312988281
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "ModelSamplingAuraFlow",
+      "bounding": [
+        575.4544067382812,
+        -792.9403686523438,
+        422.77728271484375,
+        428.99505615234375
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 12,
+      "title": "CLIP Vision Encode",
+      "bounding": [
+        403.60784912109375,
+        25.920333862304688,
+        372.04864501953125,
+        407.4358215332031
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 13,
+      "title": "3D Conditioning (Multi-View)",
+      "bounding": [
+        910.2853393554688,
+        -322.01727294921875,
+        408.3799133300781,
+        421.0982666015625
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 14,
+      "title": "Empty Latent Generator (3D Models)",
+      "bounding": [
+        1282.9659423828125,
+        166.62049865722656,
+        408.3799133300781,
+        421.0982666015625
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 15,
+      "title": "3D VAE Decoder",
+      "bounding": [
+        1589.402099609375,
+        -517.2889404296875,
+        403.91278076171875,
+        472.4702453613281
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 16,
+      "title": "Voxel to Mesh Converter",
+      "bounding": [
+        2095.878662109375,
+        -344.61065673828125,
+        406.1463317871094,
+        430.03253173828125
+      ],
+      "color": "#8AA",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 17,
+      "title": "SDXL - Image Generation",
+      "bounding": [
+        -5344.91455078125,
+        -1069.8408203125,
+        3371.8681640625,
+        1820.213134765625
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 18,
+      "title": "SAM - Image Segmentation",
+      "bounding": [
+        -1931.665771484375,
+        -864.18212890625,
+        1539.8397216796875,
+        1376.3201904296875
+      ],
+      "color": "#8AA",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 19,
+      "title": "3D Reconstruction",
+      "bounding": [
+        -341.1771240234375,
+        -1153.710205078125,
+        3885.428466796875,
+        1909.9188232421875
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.18.6"
+  },
+  "version": 0.4
+}

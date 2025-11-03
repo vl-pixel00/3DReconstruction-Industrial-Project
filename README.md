@@ -10,7 +10,7 @@ This repository implements a production-scale 3D reconstruction pipeline develop
 This repository includes a ComfyUI workflow for generating complete 3D models from text descriptions, integrating SDXL, SAM, and Hunyuan 3D 2.0 technologies to create production-ready 3D assets.
 
 <p align="center">
-  <img src="examples/Image_to_3D_ComfyUI_workflow.png" width="800"/>
+  <img src="examples/Txt2Img_Seg3D_ComfyUI_workflow.png" width="800"/>
 </p>
 <p align="center"><em>Example ComfyUI workflow configuration for text-to-3D generation</em></p>
 
@@ -68,7 +68,7 @@ python main.py
 2. Access the web interface at http://localhost:8188
 3. Import the workflow:
    - Click the "Load" button in the top menu
-   - Navigate to the repository directory and select `Image_to_3D_ComfyUI.json`
+   - Navigate to the repository directory and select `Txt2Img_Seg3D.json`
 4. Configure the workflow parameters:
    - Adjust text prompts to specify your desired 3D objects
    - Modify segmentation parameters if needed
@@ -390,7 +390,7 @@ bpy.context.scene.use_nodes = False
 - `examples` – Sample outputs demonstrating expected results
 - `start_blender.py` – Environment integration script for external Python libraries
 - `gaussian_blender_script.py` – Main rendering and matrix export script
-- `Image_to_3D_ComfyUI.json` – ComfyUI workflow configuration for text-to-3D generation
+- `Txt2Img_Seg3D.json` – ComfyUI workflow configuration for text-to-3D generation
 - `requirements.txt` – Python dependency specifications
 - `README.md` – Comprehensive project documentation
 
